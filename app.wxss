@@ -1,0 +1,105 @@
+/* app.wxss — 全局样式（暖色调主题） */
+page {
+  --brand: #ff6b35;        /* 暖橙 主色 */
+  --brand-dark: #e0521b;
+  --brand-light: #fff1ea;  /* 主色浅底 */
+  --price: #f0382f;        /* 价格红 */
+  --gold: #f59e0b;         /* 辅助金 */
+  --bg: #f5f5f5;           /* 浅灰背景 */
+  --card: #ffffff;
+  --text: #333333;         /* 深灰文字 */
+  --text-2: #777777;
+  --text-3: #aaaaaa;
+  --line: #f0f0f0;
+
+  background: var(--bg);
+  color: var(--text);
+  font-size: 28rpx;
+  font-family: -apple-system, "PingFang SC", "Helvetica Neue", sans-serif;
+}
+
+/* ===== 布局 ===== */
+.page {
+  min-height: 100vh;
+  padding-bottom: 40rpx;
+}
+.flex-1 { flex: 1; }
+.row { display: flex; align-items: center; }
+.col { display: flex; flex-direction: column; }
+.space-between { justify-content: space-between; }
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+
+/* ===== 卡片 ===== */
+.card {
+  background: var(--card);
+  border-radius: 24rpx;
+  padding: 28rpx;
+  margin: 24rpx;
+  box-shadow: 0 4rpx 20rpx rgba(120, 80, 40, 0.05);
+}
+
+/* ===== 按钮 ===== */
+.btn-primary {
+  background: linear-gradient(135deg, #f26a2e, #e8541e);
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 600;
+  border-radius: 44rpx;
+  padding: 20rpx 0;
+  border: none;
+  text-align: center;
+}
+.btn-primary::after { border: none; }
+.btn-ghost {
+  background: var(--brand-light);
+  color: var(--brand);
+  font-size: 28rpx;
+  font-weight: 600;
+  border-radius: 44rpx;
+  padding: 18rpx 0;
+  border: none;
+  text-align: center;
+}
+.btn-ghost::after { border: none; }
+
+/* ===== 文本 ===== */
+.section-title {
+  font-size: 34rpx;
+  font-weight: 700;
+  color: var(--text);
+}
+.text-2 { color: var(--text-2); font-size: 26rpx; }
+.text-3 { color: var(--text-3); font-size: 24rpx; }
+.price {
+  color: var(--price);
+  font-weight: 700;
+}
+.price .yen { font-size: 24rpx; }
+.price .num { font-size: 38rpx; }
+
+/* ===== 标签 ===== */
+.tag {
+  display: inline-block;
+  font-size: 20rpx;
+  padding: 4rpx 14rpx;
+  border-radius: 8rpx;
+  margin-right: 10rpx;
+}
+.tag-hot { background: #ffe8de; color: var(--brand); }
+.tag-gold { background: #fef3e2; color: #b97a09; }
+.tag-gray { background: #f2efec; color: var(--text-2); }
+
+/* ===== 空状态 ===== */
+.empty {
+  text-align: center;
+  padding: 100rpx 0;
+  color: var(--text-3);
+}
+.empty-icon { font-size: 80rpx; display: block; margin-bottom: 20rpx; }
+
+/* ===== 页面进入动画 ===== */
+.page-enter { animation: pageEnter 0.28s ease-out; }
+@keyframes pageEnter {
+  from { opacity: 0; transform: translateY(16rpx); }
+  to { opacity: 1; transform: translateY(0); }
+}

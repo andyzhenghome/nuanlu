@@ -1,0 +1,219 @@
+/* pages/stove-list/stove-list.wxss — 采暖炉列表（适老化：大图、大字、大间距） */
+
+/* 搜索 */
+.search-row { padding: 20rpx 24rpx 0; }
+.search-input {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 44rpx;
+  padding: 18rpx 28rpx;
+}
+.search-ico { width: 34rpx; height: 34rpx; margin-right: 14rpx; }
+.search-input input { flex: 1; font-size: 28rpx; }
+.ph { color: var(--text-3); }
+.search-clear {
+  width: 44rpx; height: 44rpx; line-height: 40rpx; text-align: center;
+  border-radius: 50%; background: #e5e5e5; color: #fff; font-size: 30rpx;
+}
+
+/* 系列 Tab（横向滚动，字号≥15pt≈30rpx，热区 88rpx） */
+.series-bar {
+  margin-top: 20rpx;
+  white-space: nowrap;
+  background: #fff;
+  padding: 0 12rpx;
+}
+.series-tabs { display: inline-flex; }
+.series-tab {
+  display: inline-block;
+  padding: 24rpx 36rpx;
+  font-size: 30rpx;
+  color: var(--text-2);
+  position: relative;
+}
+.series-tab.on {
+  color: var(--brand);
+  font-weight: 700;
+}
+.series-tab.on::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 10rpx;
+  transform: translateX(-50%);
+  width: 48rpx;
+  height: 8rpx;
+  border-radius: 4rpx;
+  background: var(--brand);
+}
+
+/* 排序栏 */
+.sort-bar {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 8rpx 16rpx 20rpx;
+  border-bottom: 2rpx solid var(--line);
+}
+.sort-item {
+  flex: 1;
+  text-align: center;
+  font-size: 26rpx;
+  color: var(--text-2);
+  padding: 16rpx 0;
+  min-height: 88rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sort-item.on { color: var(--brand); font-weight: 700; }
+.sort-arrow { margin-left: 6rpx; font-size: 22rpx; }
+.area-btn { flex: 1.2; }
+
+/* 双列商品网格 */
+.goods-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20rpx 16rpx 0;
+  justify-content: space-between;
+}
+.goods-card {
+  width: 356rpx;
+  background: #fff;
+  border-radius: 16rpx;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+  box-shadow: 0 4rpx 16rpx rgba(120, 80, 40, 0.06);
+}
+.goods-img {
+  height: 260rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.img-stove { background: linear-gradient(150deg, #fff1ea, #ffe0d0); }
+.goods-series {
+  font-size: 22rpx;
+  color: #fff;
+  background: var(--brand);
+  padding: 4rpx 18rpx;
+  border-radius: 20rpx;
+  margin-bottom: 12rpx;
+}
+.goods-model {
+  font-size: 44rpx;
+  font-weight: 800;
+  color: var(--brand);
+  letter-spacing: 2rpx;
+}
+.goods-body { padding: 18rpx 20rpx 22rpx; }
+.goods-name {
+  font-size: 28rpx;
+  font-weight: 600;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.goods-tags {
+  margin: 12rpx 0 6rpx;
+  white-space: normal;
+}
+.tag-srv {
+  background: #fff1ea;
+  color: var(--brand);
+}
+.goods-spec {
+  font-size: 24rpx;
+  color: var(--text-3);
+}
+.goods-bottom {
+  margin-top: 12rpx;
+}
+.goods-bottom .price .num {
+  font-size: 40rpx;
+}
+.goods-sales {
+  display: block;
+  margin-top: 8rpx;
+  font-size: 22rpx;
+  color: var(--text-3);
+}
+
+/* 加载状态 */
+.load-status {
+  text-align: center;
+  padding: 30rpx 0 50rpx;
+  font-size: 24rpx;
+  color: var(--text-3);
+}
+
+/* 面积筛选面板 */
+.mask {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 100;
+}
+.area-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  border-radius: 28rpx 28rpx 0 0;
+  padding: 36rpx 32rpx calc(36rpx + env(safe-area-inset-bottom));
+}
+.panel-title {
+  font-size: 32rpx;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 32rpx;
+}
+.area-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx;
+}
+.area-opt {
+  width: calc(33.33% - 14rpx);
+  text-align: center;
+  padding: 26rpx 0;
+  font-size: 28rpx;
+  color: var(--text-2);
+  background: #f7f7f7;
+  border-radius: 12rpx;
+  border: 2rpx solid transparent;
+}
+.area-opt.on {
+  background: var(--brand-light);
+  border-color: var(--brand);
+  color: var(--brand);
+  font-weight: 700;
+}
+.panel-btns {
+  display: flex;
+  gap: 20rpx;
+  margin-top: 36rpx;
+}
+.panel-btn {
+  flex: 1;
+  text-align: center;
+  padding: 24rpx 0;
+  border-radius: 12rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.panel-btn.ghost {
+  background: #f5f5f5;
+  color: var(--text-2);
+}
+.panel-btn.primary {
+  background: var(--brand);
+  color: #fff;
+}

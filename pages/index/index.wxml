@@ -1,0 +1,84 @@
+<!-- pages/index/index.wxml — 首页 -->
+<view class="page page-enter">
+
+  <!-- 搜索栏（按型号/面积搜索，点击进入炉子列表） -->
+  <view class="search-wrap">
+    <view class="search-bar" bindtap="goSearch">
+      <image class="search-ico" src="/images/icon-search.png" mode="aspectFit"></image>
+      <text class="search-ph">搜索型号 / 输入取暖面积，如 100㎡</text>
+    </view>
+  </view>
+
+  <!-- 三大核心入口：3 图标平铺 -->
+  <view class="nav-grid card">
+    <view class="nav-item" data-url="/pages/stove-list/stove-list" bindtap="goPage">
+      <view class="nav-badge badge-fire">
+        <image class="nav-icon-img" src="/images/nav-stove.png" mode="aspectFit"></image>
+      </view>
+      <text class="nav-name">燃煤采暖炉</text>
+      <text class="nav-sub">60-300㎡ 选型</text>
+    </view>
+
+    <view class="nav-item" data-url="/pages/parts/parts" bindtap="goPage">
+      <view class="nav-badge badge-parts">
+        <image class="nav-icon-img" src="/images/nav-parts.png" mode="aspectFit"></image>
+      </view>
+      <text class="nav-name">配件耗材</text>
+      <text class="nav-sub">烟囱/暖气片/水泵</text>
+    </view>
+
+    <view class="nav-item" data-url="/pages/install/install" bindtap="goPage">
+      <view class="nav-badge badge-install">
+        <image class="nav-icon-img" src="/images/nav-install.png" mode="aspectFit"></image>
+      </view>
+      <text class="nav-name">安装服务</text>
+      <text class="nav-sub">上门安装/改造</text>
+    </view>
+  </view>
+
+  <!-- 轮播 Banner -->
+  <swiper class="banner" indicator-dots autoplay circular interval="3500"
+    indicator-color="rgba(255,255,255,.4)" indicator-active-color="#ffffff">
+    <swiper-item wx:for="{{banners}}" wx:key="id">
+      <view class="banner-item" style="background: {{item.bg}};">
+        <text class="banner-title">{{item.title}}</text>
+        <text class="banner-sub">{{item.sub}}</text>
+      </view>
+    </swiper-item>
+  </swiper>
+
+  <!-- 热销推荐 -->
+  <view class="section-head">
+    <text class="section-title">🏆 热销推荐</text>
+    <text class="section-more" bindtap="goStoveList">全部 ›</text>
+  </view>
+
+  <scroll-view scroll-x class="hot-scroll" enhanced show-scrollbar="{{false}}">
+    <view class="hot-list">
+      <view class="hot-card" wx:for="{{hotStoves}}" wx:key="id" data-id="{{item.id}}" bindtap="goDetail">
+        <view class="hot-img img-stove">
+          <text class="hot-model">{{item.model}}</text>
+        </view>
+        <view class="hot-info">
+          <text class="hot-name">{{item.name}}</text>
+          <text class="hot-spec">{{item.power}}kW · {{item.area}}</text>
+          <view class="row" style="margin-top:8rpx;">
+            <text class="price"><text class="yen">¥</text><text class="num">{{item.priceText}}</text></text>
+            <view class="flex-1"></view>
+            <text class="hot-sales">已售 {{item.sales}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 智能选炉入口 -->
+  <view class="picker-entry" bindtap="goPicker">
+    <view class="picker-left">
+      <text class="picker-title">💡 不知道怎么选？</text>
+      <text class="picker-sub">1 分钟按面积帮你匹配合适的炉子</text>
+    </view>
+    <view class="picker-btn">立即匹配</view>
+  </view>
+
+</view>

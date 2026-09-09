@@ -1,0 +1,70 @@
+/* pages/my/my.wxss */
+
+.profile {
+  display: flex;
+  align-items: center;
+  padding: 50rpx 32rpx 30rpx;
+}
+.avatar {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #f26a2e, #e8541e);
+  color: #fff;
+  font-size: 44rpx;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nickname {
+  font-size: 36rpx;
+  font-weight: 700;
+}
+
+/* 概览 */
+.stat {
+  display: flex;
+  align-items: center;
+  padding: 32rpx 0;
+}
+.stat-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stat-num {
+  font-size: 40rpx;
+  font-weight: 800;
+  color: var(--brand);
+}
+.stat-label {
+  margin-top: 8rpx;
+  font-size: 24rpx;
+  color: var(--text-2);
+}
+.stat-line {
+  width: 2rpx;
+  height: 56rpx;
+  background: var(--line);
+}
+
+.section-head { margin: 30rpx 28rpx 12rpx; }
+
+.booking { display: flex; flex-direction: column; gap: 10rpx; }
+.bk-name { font-size: 30rpx; font-weight: 700; }
+.bk-status {
+  font-size: 22rpx;
+  color: var(--brand);
+  background: var(--brand-light);
+  padding: 6rpx 18rpx;
+  border-radius: 24rpx;
+}
+
+.about {
+  margin-top: 60rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: var(--text-3);
+}

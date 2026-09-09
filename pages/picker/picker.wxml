@@ -1,0 +1,51 @@
+<!-- pages/picker/picker.wxml — 智能选炉 -->
+<view class="page page-enter">
+
+  <view class="card ask">
+    <text class="ask-title">您家取暖面积大概多大？</text>
+    <text class="ask-sub">农村平房按实际取暖房间面积填写</text>
+    <view class="area-input">
+      <input class="area-num" type="number" value="{{area}}" placeholder="例如 100"
+        placeholder-class="ph" bindinput="onArea" />
+      <text class="area-unit">㎡</text>
+    </view>
+
+    <text class="ask-label">房屋保温情况</text>
+    <view class="opt-row">
+      <view class="opt {{insulate === 'normal' ? 'on' : ''}}" data-v="normal" bindtap="onInsulate">
+        一般（平房/单层窗）
+      </view>
+      <view class="opt {{insulate === 'good' ? 'on' : ''}}" data-v="good" bindtap="onInsulate">
+        较好（保温层/双层窗）
+      </view>
+    </view>
+
+    <button class="btn-primary match-btn" bindtap="doMatch">帮我匹配炉子</button>
+  </view>
+
+  <!-- 匹配结果 -->
+  <block wx:if="{{result}}">
+    <view class="card result-tip">
+      <text class="result-line">按 <text class="hl">{{area}}㎡</text> 估算，建议选 <text class="hl">{{needPower}}kW</text> 以上采暖炉</text>
+      <text class="text-3">已为您筛出 {{result.length}} 款功率合适的炉子</text>
+    </view>
+
+    <view wx:if="{{result.length === 0}}" class="empty">
+      <text class="empty-icon">🏠</text>
+      <text>面积较大，建议拨打客服电话定制方案</text>
+    </view>
+
+    <view wx:for="{{result}}" wx:key="id" class="card rec-card" data-id="{{item.id}}" bindtap="goDetail">
+      <view class="rec-img img-stove"><text class="rec-model">{{item.model}}</text></view>
+      <view class="rec-info">
+        <text class="rec-name">{{item.name}}</text>
+        <text class="text-3">{{item.power}}kW · 适用 {{item.area}}</text>
+        <view class="rec-bottom">
+          <text class="price"><text class="yen">¥</text><text class="num">{{item.priceText}}</text></text>
+          <view class="buy-btn">看详情</view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+</view>

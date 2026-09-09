@@ -1,0 +1,76 @@
+<!-- pages/parts/parts.wxml — 配件耗材（左侧分类 + 右侧商品） -->
+<view class="parts-page page-enter">
+
+  <!-- 顶部搜索（固定） -->
+  <view class="top-bar">
+    <view class="search-input">
+      <image class="search-ico" src="/images/icon-search.png" mode="aspectFit"></image>
+      <input value="{{keyword}}" placeholder="搜索烟囱 / 水泵 / 阀门..." placeholder-class="ph"
+        bindinput="onSearch" />
+      <text wx:if="{{keyword}}" class="search-clear" bindtap="clearSearch">×</text>
+    </view>
+  </view>
+
+  <view class="parts-body">
+    <!-- 左侧分类栏 -->
+    <scroll-view scroll-y class="cat-side">
+      <view wx:for="{{categories}}" wx:key="id"
+        class="cat-item {{activeCat === index && !keyword ? 'on' : ''}}"
+        data-i="{{index}}" bindtap="onCatTap">
+        <view class="cat-bar"></view>
+        <text class="cat-name">{{item.name}}</text>
+      </view>
+    </scroll-view>
+
+    <!-- 右侧商品列表 -->
+    <scroll-view scroll-y class="prod-side"
+      scroll-into-view="{{scrollInto}}" scroll-with-animation
+      bindscroll="onProdScroll">
+
+      <!-- 搜索结果模式 -->
+      <block wx:if="{{keyword}}">
+        <view class="side-tip">搜到 {{searchResults.length}} 件相关配件</view>
+        <view wx:for="{{searchResults}}" wx:key="id" class="prod-card">
+          <view class="prod-img"><text class="prod-img-txt">配</text></view>
+          <view class="prod-info">
+            <text class="prod-name">{{item.name}}</text>
+            <text class="text-3">{{item.spec}}</text>
+            <text class="text-3">已售 {{item.sales}}</text>
+            <view class="prod-bottom">
+              <text class="price"><text class="yen">¥</text><text class="num" style="font-size:32rpx;">{{item.priceText}}</text></text>
+              <view class="add-btn" data-name="{{item.name}}" catchtap="addCart">加购</view>
+            </view>
+          </view>
+        </view>
+        <view wx:if="{{searchResults.length === 0}}" class="side-empty">没有找到相关配件</view>
+      </block>
+
+      <!-- 分类浏览模式 -->
+      <block wx:else>
+        <view wx:for="{{categories}}" wx:for-index="ci" wx:key="id" id="sec-{{ci}}" class="p-section">
+          <view class="side-tip">{{item.name}}</view>
+          <view wx:for="{{item.items}}" wx:for-item="p" wx:key="id" class="prod-card">
+            <view class="prod-img"><text class="prod-img-txt">{{item.short}}</text></view>
+            <view class="prod-info">
+              <text class="prod-name">{{p.name}}</text>
+              <text class="text-3">{{p.spec}}</text>
+              <text class="text-3">已售 {{p.sales}}</text>
+              <view class="prod-bottom">
+                <text class="price"><text class="yen">¥</text><text class="num" style="font-size:32rpx;">{{p.priceText}}</text></text>
+                <view class="add-btn" data-name="{{p.name}}" catchtap="addCart">加购</view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view style="height: 140rpx;"></view>
+      </block>
+    </scroll-view>
+  </view>
+
+  <!-- 浮动购物车 -->
+  <view class="cart-fab {{bounce ? 'bounce' : ''}}" bindtap="goCart">
+    <image class="cart-ico" src="/images/icon-cart.png" mode="aspectFit"></image>
+    <view wx:if="{{cartCount > 0}}" class="cart-badge">{{cartCount}}</view>
+  </view>
+
+</view>

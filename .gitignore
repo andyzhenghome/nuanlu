@@ -1,0 +1,11 @@
+# 微信开发者工具本地私有配置
+project.private.config.json
+miniprogram_npm/
+
+# 系统/编辑器
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.trae/
+*.log

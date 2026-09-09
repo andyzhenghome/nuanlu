@@ -1,0 +1,97 @@
+/* pages/picker/picker.wxss */
+
+.ask { padding: 40rpx 32rpx; }
+.ask-title {
+  font-size: 34rpx;
+  font-weight: 700;
+}
+.ask-sub {
+  display: block;
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  color: var(--text-3);
+}
+.area-input {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin: 40rpx 0 10rpx;
+}
+.area-num {
+  width: 280rpx;
+  text-align: center;
+  font-size: 80rpx;
+  font-weight: 800;
+  color: var(--brand);
+  border-bottom: 4rpx solid #ffd9bf;
+}
+.area-unit {
+  margin-left: 16rpx;
+  font-size: 34rpx;
+  color: var(--text-2);
+}
+.ph { color: #e4d6c9; }
+.ask-label {
+  display: block;
+  margin: 36rpx 0 16rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+.opt-row { display: flex; gap: 20rpx; }
+.opt {
+  flex: 1;
+  text-align: center;
+  font-size: 26rpx;
+  color: var(--text-2);
+  padding: 22rpx 0;
+  border-radius: 16rpx;
+  border: 2rpx solid var(--line);
+  background: #faf7f4;
+}
+.opt.on {
+  border-color: var(--brand);
+  background: var(--brand-light);
+  color: var(--brand);
+  font-weight: 600;
+}
+.match-btn { margin-top: 40rpx; width: 100%; }
+
+/* 结果 */
+.result-tip { display: flex; flex-direction: column; }
+.result-line { font-size: 28rpx; }
+.hl { color: var(--brand); font-weight: 700; }
+.rec-card {
+  display: flex;
+  align-items: center;
+}
+.rec-img {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 16rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.img-stove { background: linear-gradient(145deg, #fff1ea, #ffe0d0); }
+.rec-model { font-size: 30rpx; font-weight: 800; color: var(--brand); }
+.rec-info {
+  flex: 1;
+  margin-left: 24rpx;
+  display: flex;
+  flex-direction: column;
+}
+.rec-name { font-size: 30rpx; font-weight: 700; }
+.rec-bottom {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+}
+.buy-btn {
+  margin-left: auto;
+  background: var(--brand);
+  color: #fff;
+  font-size: 24rpx;
+  padding: 10rpx 28rpx;
+  border-radius: 32rpx;
+}

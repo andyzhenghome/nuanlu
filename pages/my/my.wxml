@@ -1,0 +1,48 @@
+<!-- pages/my/my.wxml — 我的 -->
+<view class="page page-enter">
+
+  <view class="profile">
+    <view class="avatar">客</view>
+    <view class="col" style="margin-left:24rpx;">
+      <text class="nickname">顾客朋友</text>
+      <text class="text-3">农村采暖 · 一站式服务</text>
+    </view>
+  </view>
+
+  <!-- 数据概览 -->
+  <view class="stat card">
+    <view class="stat-item">
+      <text class="stat-num">{{bookingCount}}</text>
+      <text class="stat-label">服务预约</text>
+    </view>
+    <view class="stat-line"></view>
+    <view class="stat-item">
+      <text class="stat-num">{{cartCount}}</text>
+      <text class="stat-label">选购清单</text>
+    </view>
+    <view class="stat-line"></view>
+    <view class="stat-item" bindtap="callService">
+      <text class="stat-num">📞</text>
+      <text class="stat-label">客服电话</text>
+    </view>
+  </view>
+
+  <!-- 预约记录 -->
+  <view class="section-head"><text class="section-title">我的预约</text></view>
+  <view wx:if="{{bookings.length === 0}}" class="empty card" style="margin:0 24rpx;">
+    <text>暂无预约记录</text>
+    <text class="text-3" style="margin-top:12rpx;">在「安装服务」页可预约上门</text>
+  </view>
+  <view wx:for="{{bookings}}" wx:key="id" class="card booking">
+    <view class="row space-between">
+      <text class="bk-name">{{item.serviceName || ('采暖炉安装 · ' + item.model)}}</text>
+      <text class="bk-status">{{item.status}}</text>
+    </view>
+    <text class="text-2" wx:if="{{item.date}}">预约：{{item.date}} {{item.slot}}</text>
+    <text class="text-2" wx:if="{{item.region}}">区域：{{item.region}} · 时间：{{item.time}}</text>
+    <text class="text-2" wx:if="{{item.name}}">联系人：{{item.name}} {{item.phone}}</text>
+    <text class="text-3">地址：{{item.addr}}</text>
+  </view>
+
+  <view class="about">暖炉到家 v1.0 · 让农村冬天更暖和</view>
+</view>

@@ -1,0 +1,78 @@
+/* pages/detail/detail.wxss */
+
+.hero {
+  height: 420rpx;
+  background: linear-gradient(160deg, #ffe3d3, #ffb893);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.hero-model {
+  font-size: 96rpx;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 4rpx;
+  text-shadow: 0 6rpx 20rpx rgba(194, 65, 12, 0.3);
+}
+.hero-name {
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  color: #fff;
+}
+
+.price-card {
+  background: #fff;
+  padding: 24rpx 28rpx;
+}
+.tags { margin-top: 16rpx; }
+
+/* 参数 */
+.params { padding: 8rpx 28rpx; }
+.param-row {
+  display: flex;
+  padding: 26rpx 0;
+  border-bottom: 2rpx solid var(--line);
+}
+.param-row:last-child { border-bottom: none; }
+.param-label {
+  width: 180rpx;
+  color: var(--text-2);
+  font-size: 27rpx;
+}
+.param-val {
+  flex: 1;
+  font-size: 27rpx;
+  font-weight: 600;
+}
+
+.desc-text {
+  display: block;
+  margin-top: 18rpx;
+  font-size: 27rpx;
+  color: var(--text-2);
+  line-height: 1.7;
+}
+
+/* 底部操作条 */
+.bottom-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 14rpx 24rpx;
+  gap: 16rpx;
+  box-shadow: 0 -4rpx 20rpx rgba(120, 80, 40, 0.08);
+}
+.bb-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90rpx;
+}
+.bb-icon { font-size: 38rpx; }
+.bb-text { font-size: 20rpx; color: var(--text-2); }
+.bb-btn { flex: 1; margin: 0; }

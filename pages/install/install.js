@@ -86,7 +86,7 @@ Page({
   submit() {
     const { orders, orderIndex, addr, dateList, dateIndex, slotIndex } = this.data
     if (orders.length === 0) {
-      return wx.showToast({ title: '请先在客服电话下单', icon: 'none' })
+      return wx.showToast({ title: '请先电话联系商家', icon: 'none' })
     }
     if (orderIndex < 0) return wx.showToast({ title: '请选择关联订单', icon: 'none' })
     if (!addr.trim()) return wx.showToast({ title: '请填写安装地址', icon: 'none' })

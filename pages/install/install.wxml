@@ -74,7 +74,7 @@
         <text class="form-arrow">›</text>
       </view>
     </picker>
-    <view wx:if="{{orders.length === 0}}" class="no-order">暂无可预约的已签收订单，可直接电话预约：{{shop.phone}}</view>
+    <view wx:if="{{orders.length === 0}}" class="no-order">暂无已签收订单可关联，可直接电话联系预约：{{shop.phone}}</view>
 
     <!-- 安装地址 -->
     <view class="form-row align-top">

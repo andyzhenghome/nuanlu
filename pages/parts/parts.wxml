@@ -38,7 +38,6 @@
             <text class="text-3">已售 {{item.sales}}</text>
             <view class="prod-bottom">
               <text class="price"><text class="yen">¥</text><text class="num" style="font-size:32rpx;">{{item.priceText}}</text></text>
-              <view class="add-btn" data-name="{{item.name}}" catchtap="addCart">加购</view>
             </view>
           </view>
         </view>
@@ -57,7 +56,6 @@
               <text class="text-3">已售 {{p.sales}}</text>
               <view class="prod-bottom">
                 <text class="price"><text class="yen">¥</text><text class="num" style="font-size:32rpx;">{{p.priceText}}</text></text>
-                <view class="add-btn" data-name="{{p.name}}" catchtap="addCart">加购</view>
               </view>
             </view>
           </view>
@@ -67,10 +65,10 @@
     </scroll-view>
   </view>
 
-  <!-- 浮动购物车 -->
-  <view class="cart-fab {{bounce ? 'bounce' : ''}}" bindtap="goCart">
-    <image class="cart-ico" src="/images/icon-cart.png" mode="aspectFit"></image>
-    <view wx:if="{{cartCount > 0}}" class="cart-badge">{{cartCount}}</view>
+  <!-- 浮动电话咨询 -->
+  <view class="call-fab" bindtap="callService">
+    <text class="call-ico">📞</text>
+    <text class="call-txt">咨询</text>
   </view>
 
 </view>

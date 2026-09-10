@@ -8,9 +8,7 @@ Page({
     activeCat: 0,
     scrollInto: '',
     keyword: '',
-    searchResults: [],
-    cartCount: 0,
-    bounce: false
+    searchResults: []
   },
 
   // 右侧各分类区块的偏移量（相对滚动容器）
@@ -24,16 +22,11 @@ Page({
       items: c.items.map((p) => ({ ...p, priceText: formatMoney(p.price) }))
     }))
     this.setData({ categories })
-    this.syncCart()
   },
 
   onReady() {
     // 测量右侧各分类区块位置
     setTimeout(() => this.measureSections(), 100)
-  },
-
-  onShow() {
-    this.syncCart()
   },
 
   /** 测量区块偏移，用于右侧滚动时反查分类 */
@@ -92,25 +85,8 @@ Page({
     this.setData({ keyword: '', searchResults: [] })
   },
 
-  /** 加购：入本地购物车 + 徽标弹跳动画 */
-  addCart(e) {
-    const name = e.currentTarget.dataset.name
-    const cart = wx.getStorageSync('nuanlu_cart') || []
-    cart.push({ name, at: Date.now() })
-    wx.setStorageSync('nuanlu_cart', cart)
-    getApp().globalData.cartCount = cart.length
-    this.setData({ cartCount: cart.length, bounce: true })
-    wx.showToast({ title: '已加入购物车', icon: 'success', duration: 900 })
-    setTimeout(() => this.setData({ bounce: false }), 500)
-  },
-
-  syncCart() {
-    const cart = wx.getStorageSync('nuanlu_cart') || []
-    this.setData({ cartCount: cart.length })
-  },
-
-  /** 浮动购物车 → 我的页（选购清单） */
-  goCart() {
-    wx.switchTab({ url: '/pages/my/my' })
+  /** 电话咨询 */
+  callService() {
+    wx.makePhoneCall({ phoneNumber: mock.shop.phone, fail: () => {} })
   }
 })

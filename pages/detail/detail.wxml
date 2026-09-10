@@ -55,8 +55,7 @@
       <text class="bb-icon">📞</text>
       <text class="bb-text">客服</text>
     </view>
-    <button class="btn-ghost bb-btn" bindtap="addCart">加入清单</button>
-    <button class="btn-primary bb-btn" bindtap="buyNow">立即下单</button>
+    <button class="btn-primary bb-btn" bindtap="callService">电话咨询 {{item.servicesText}}</button>
   </view>
 
 </view>

@@ -16,14 +16,9 @@
       <text class="stat-label">服务预约</text>
     </view>
     <view class="stat-line"></view>
-    <view class="stat-item">
-      <text class="stat-num">{{cartCount}}</text>
-      <text class="stat-label">选购清单</text>
-    </view>
-    <view class="stat-line"></view>
     <view class="stat-item" bindtap="callService">
       <text class="stat-num">📞</text>
-      <text class="stat-label">客服电话</text>
+      <text class="stat-label">电话咨询</text>
     </view>
   </view>
 

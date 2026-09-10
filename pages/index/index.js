@@ -18,7 +18,7 @@ Page({
   },
 
   /** tabBar 页面（不能用 navigateTo） */
-  TAB_PAGES: ['/pages/index/index', '/pages/install/install', '/pages/my/my'],
+  TAB_PAGES: ['/pages/index/index', '/pages/my/my'],
 
   /** 三大入口 / 通用跳转（tabBar 页走 switchTab，普通页走 navigateTo） */
   goPage(e) {

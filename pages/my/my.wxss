@@ -52,16 +52,6 @@
 
 .section-head { margin: 30rpx 28rpx 12rpx; }
 
-.booking { display: flex; flex-direction: column; gap: 10rpx; }
-.bk-name { font-size: 30rpx; font-weight: 700; }
-.bk-status {
-  font-size: 22rpx;
-  color: var(--brand);
-  background: var(--brand-light);
-  padding: 6rpx 18rpx;
-  border-radius: 24rpx;
-}
-
 .about {
   margin-top: 60rpx;
   text-align: center;

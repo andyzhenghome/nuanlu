@@ -69,8 +69,6 @@
   box-shadow: 0 8rpx 20rpx rgba(232, 84, 30, 0.15);
 }
 .badge-fire    { background: linear-gradient(145deg, #ffe3d3, #ffd0b8); }
-.badge-parts   { background: linear-gradient(145deg, #fff0d6, #ffe3b8); }
-.badge-install { background: linear-gradient(145deg, #ffe3d3, #ffcbb0); }
 .nav-icon-img {
   width: 72rpx;
   height: 72rpx;

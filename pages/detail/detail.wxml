@@ -44,7 +44,7 @@
   <view class="card">
     <text class="section-title">商品说明</text>
     <text class="desc-text">{{item.desc}}</text>
-    <text class="desc-text">本商品为农村家用燃煤采暖炉，可接暖气片/地暖，带封火功能过夜不灭火。支持上门安装（另收安装费）。</text>
+    <text class="desc-text">本商品为农村家用燃煤采暖炉，可接暖气片/地暖，带封火功能过夜不灭火。</text>
   </view>
 
   <view style="height: 140rpx;"></view>

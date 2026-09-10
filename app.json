@@ -2,8 +2,6 @@
   "pages": [
     "pages/index/index",
     "pages/stove-list/stove-list",
-    "pages/parts/parts",
-    "pages/install/install",
     "pages/picker/picker",
     "pages/detail/detail",
     "pages/my/my"
@@ -24,10 +22,6 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页"
-      },
-      {
-        "pagePath": "pages/install/install",
-        "text": "安装服务"
       },
       {
         "pagePath": "pages/my/my",

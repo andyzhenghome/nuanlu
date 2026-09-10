@@ -16,7 +16,7 @@
     </view>
   </view>
 
-  <!-- 三大核心入口：3 图标平铺 -->
+  <!-- 核心入口：燃煤采暖炉 -->
   <view class="nav-grid card">
     <view class="nav-item" data-url="/pages/stove-list/stove-list" bindtap="goPage">
       <view class="nav-badge badge-fire">
@@ -24,22 +24,6 @@
       </view>
       <text class="nav-name">燃煤采暖炉</text>
       <text class="nav-sub">30-90㎡ 选型</text>
-    </view>
-
-    <view class="nav-item" data-url="/pages/parts/parts" bindtap="goPage">
-      <view class="nav-badge badge-parts">
-        <image class="nav-icon-img" src="/images/nav-parts.png" mode="aspectFit"></image>
-      </view>
-      <text class="nav-name">配件耗材</text>
-      <text class="nav-sub">烟囱/暖气片/水泵</text>
-    </view>
-
-    <view class="nav-item" data-url="/pages/install/install" bindtap="goPage">
-      <view class="nav-badge badge-install">
-        <image class="nav-icon-img" src="/images/nav-install.png" mode="aspectFit"></image>
-      </view>
-      <text class="nav-name">安装服务</text>
-      <text class="nav-sub">上门安装/改造</text>
     </view>
   </view>
 

@@ -57,7 +57,7 @@
     <view class="hot-list">
       <view class="hot-card" wx:for="{{hotStoves}}" wx:key="id" data-id="{{item.id}}" bindtap="goDetail">
         <view class="hot-img">
-          <image class="hot-photo" src="{{item.image}}" mode="aspectFill" lazy-load></image>
+          <image class="hot-photo" src="{{item.image}}" mode="aspectFit" lazy-load></image>
         </view>
         <view class="hot-info">
           <text class="hot-name">{{item.name}}</text>

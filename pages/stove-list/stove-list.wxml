@@ -38,7 +38,7 @@
   <view class="goods-grid" wx:if="{{list.length > 0}}">
     <view class="goods-card" wx:for="{{list}}" wx:key="id" data-id="{{item.id}}" bindtap="goDetail">
       <view class="goods-img">
-        <image class="goods-photo" src="{{item.image}}" mode="aspectFill" lazy-load></image>
+        <image class="goods-photo" src="{{item.image}}" mode="aspectFit" lazy-load></image>
         <text class="goods-series">{{item.seriesLabel}}</text>
       </view>
       <view class="goods-body">

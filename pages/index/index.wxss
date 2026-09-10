@@ -1,5 +1,31 @@
 /* pages/index/index.wxss — 首页 */
 
+/* 品牌带 */
+.brand-bar {
+  display: flex;
+  align-items: center;
+  gap: 14rpx;
+  margin: 20rpx 24rpx 0;
+  padding: 18rpx 28rpx;
+  background: linear-gradient(135deg, #fff6ef, #ffe3d0);
+  border-radius: 16rpx;
+  border: 2rpx solid #ffd9bf;
+}
+.brand-name {
+  font-size: 30rpx;
+  font-weight: 800;
+  color: #b34a17;
+}
+.brand-sub {
+  flex: 1;
+  font-size: 24rpx;
+  color: #a86b4a;
+}
+.brand-arrow {
+  font-size: 30rpx;
+  color: #b34a17;
+}
+
 /* 搜索栏 */
 .search-wrap {
   padding: 20rpx 24rpx 4rpx;

@@ -68,3 +68,50 @@
   font-size: 22rpx;
   color: var(--text-3);
 }
+
+/* 店铺信息卡 */
+.shop-card {
+  margin: 0 24rpx;
+  padding: 28rpx 28rpx 24rpx;
+}
+.shop-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18rpx;
+}
+.shop-brand {
+  font-size: 34rpx;
+  font-weight: 800;
+  color: var(--brand);
+}
+.shop-loc {
+  font-size: 22rpx;
+  color: var(--text-3);
+  background: var(--brand-light);
+  padding: 6rpx 18rpx;
+  border-radius: 20rpx;
+}
+.shop-row {
+  display: flex;
+  align-items: baseline;
+  padding: 12rpx 0;
+  border-bottom: 2rpx solid var(--line);
+}
+.shop-row:last-of-type { border-bottom: none; }
+.shop-label {
+  width: 120rpx;
+  flex-shrink: 0;
+  font-size: 26rpx;
+  color: var(--text-3);
+}
+.shop-val {
+  flex: 1;
+  font-size: 27rpx;
+  color: var(--text);
+  font-weight: 500;
+}
+.shop-call {
+  margin-top: 24rpx;
+  width: 100%;
+}

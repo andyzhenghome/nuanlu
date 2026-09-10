@@ -1,6 +1,13 @@
 <!-- pages/index/index.wxml — 首页 -->
 <view class="page page-enter">
 
+  <!-- 品牌带 -->
+  <view class="brand-bar" bindtap="goAbout">
+    <text class="brand-name">🏭 {{shop.brand}}</text>
+    <text class="brand-sub">{{shop.contact}} · {{shop.phone}}</text>
+    <text class="brand-arrow">›</text>
+  </view>
+
   <!-- 搜索栏（按型号/面积搜索，点击进入炉子列表） -->
   <view class="search-wrap">
     <view class="search-bar" bindtap="goSearch">

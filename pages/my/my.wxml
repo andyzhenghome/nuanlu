@@ -27,6 +27,27 @@
     </view>
   </view>
 
+  <!-- 店铺信息 -->
+  <view class="card shop-card">
+    <view class="shop-head">
+      <text class="shop-brand">🏭 {{shop.brand}}</text>
+      <text class="shop-loc">山东·淄博</text>
+    </view>
+    <view class="shop-row">
+      <text class="shop-label">厂址</text>
+      <text class="shop-val">{{shop.address}}</text>
+    </view>
+    <view class="shop-row">
+      <text class="shop-label">联系人</text>
+      <text class="shop-val">{{shop.contact}} · {{shop.phone}}</text>
+    </view>
+    <view class="shop-row">
+      <text class="shop-label">安装费</text>
+      <text class="shop-val">{{shop.installFeeRange}}</text>
+    </view>
+    <button class="btn-primary shop-call" bindtap="callService">拨打电话</button>
+  </view>
+
   <!-- 预约记录 -->
   <view class="section-head"><text class="section-title">我的预约</text></view>
   <view wx:if="{{bookings.length === 0}}" class="empty card" style="margin:0 24rpx;">

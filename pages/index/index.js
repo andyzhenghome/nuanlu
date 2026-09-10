@@ -5,6 +5,7 @@ const { formatMoney } = require('../../utils/format')
 Page({
   data: {
     banners: mock.banners,
+    shop: mock.shop,
     hotStoves: []
   },
 
@@ -48,5 +49,10 @@ Page({
   /** 商品详情 */
   goDetail(e) {
     wx.navigateTo({ url: `/pages/detail/detail?id=${e.currentTarget.dataset.id}` })
+  },
+
+  /** 品牌带 → 我的页（店铺信息） */
+  goAbout() {
+    wx.switchTab({ url: '/pages/my/my' })
   }
 })

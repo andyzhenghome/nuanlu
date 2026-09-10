@@ -108,7 +108,7 @@ const guarantees = [
 
 // 收费标准
 const installFees = [
-  { name: '基础安装', price: '免费', note: '购机含基础安装' },
+  { name: '基础安装', price: '¥100-200', note: '根据地区' },
   { name: '加长烟道', price: '¥30/米', note: '超过标配 2 米部分' },
   { name: '打孔费', price: '¥50/个', note: '墙体打孔穿管' },
   { name: '二楼及以上', price: '¥100/层', note: '楼层搬运附加费' }
@@ -117,14 +117,23 @@ const installFees = [
 // 安装进度节点
 const installSteps = ['待接单', '师傅已接单', '师傅已出发', '安装中', '安装完成']
 
-// 模拟师傅信息
-const worker = { name: '王师傅', phone: '13800138000', rating: 4.9, orderCount: 1286 }
+// 师傅信息（品牌方上门）
+const worker = { name: '郑建华', phone: '13370691721', rating: 4.9, orderCount: 1286 }
 
 // 服务区域（乡镇示例）
 const regions = ['本县城关镇', '张家屯乡', '李家洼镇', '王家庄乡', '河东堡镇', '清水河乡', '其他区域（电话确认）']
 
 // 预约时间段
 const timeSlots = ['今天下午', '明天上午', '明天下午', '后天上午', '本周六', '本周日']
+
+// 店铺/品牌信息
+const shop = {
+  brand: '慧明水暖',
+  address: '山东省淄博市桓台县唐山镇波扎店村',
+  contact: '郑建华',
+  phone: '13370691721',
+  installFeeRange: '¥100-200（根据地区）'
+}
 
 module.exports = {
   banners,
@@ -136,5 +145,6 @@ module.exports = {
   installSteps,
   worker,
   regions,
-  timeSlots
+  timeSlots,
+  shop
 }

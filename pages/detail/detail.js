@@ -28,7 +28,7 @@ Page({
   buyNow() {
     wx.showModal({
       title: '确认下单',
-      content: `「${this.data.item.name}」¥${this.data.item.priceText}\n\n电话订购：400-000-0000\n或下单后师傅电话与您确认送装时间。`,
+      content: `「${this.data.item.name}」¥${this.data.item.priceText}\n\n电话订购：${mock.shop.phone}（${mock.shop.contact}）\n或下单后师傅电话与您确认送装时间。`,
       confirmText: '提交订单',
       cancelText: '再看看',
       success: (r) => {
@@ -40,6 +40,6 @@ Page({
   },
 
   callService() {
-    wx.makePhoneCall({ phoneNumber: '4000000000', fail: () => {} })
+    wx.makePhoneCall({ phoneNumber: mock.shop.phone, fail: () => {} })
   }
 })

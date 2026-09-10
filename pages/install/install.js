@@ -18,6 +18,7 @@ Page({
     steps: mock.installSteps,
     worker: mock.worker,
     workerInitial: mock.worker.name.charAt(0),
+    shop: mock.shop,
     // 仅"已签收"订单可预约
     orders: mock.orders
       .filter((o) => o.status === '已签收')
@@ -133,6 +134,6 @@ Page({
   },
 
   callService() {
-    wx.makePhoneCall({ phoneNumber: '4000000000', fail: () => {} })
+    wx.makePhoneCall({ phoneNumber: mock.shop.phone, fail: () => {} })
   }
 })

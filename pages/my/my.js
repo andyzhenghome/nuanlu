@@ -1,6 +1,9 @@
 // pages/my/my.js — 我的
+const mock = require('../../data/mock')
+
 Page({
   data: {
+    shop: mock.shop,
     bookings: [],
     bookingCount: 0,
     cartCount: 0
@@ -17,6 +20,6 @@ Page({
   },
 
   callService() {
-    wx.makePhoneCall({ phoneNumber: '4000000000', fail: () => {} })
+    wx.makePhoneCall({ phoneNumber: mock.shop.phone, fail: () => {} })
   }
 })

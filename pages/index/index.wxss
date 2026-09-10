@@ -115,18 +115,15 @@
 }
 .hot-img {
   height: 180rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: #f5f5f5;
 }
-.img-stove {
-  background: linear-gradient(145deg, #fff1ea, #ffe0d0);
-}
-.hot-model {
-  font-size: 44rpx;
-  font-weight: 800;
-  color: var(--brand);
-  letter-spacing: 2rpx;
+.hot-photo {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
 }
 .hot-info {
   padding: 18rpx 20rpx 22rpx;

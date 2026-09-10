@@ -15,13 +15,13 @@ const SORT_OPTIONS = [
   { key: 'price', label: '价格' }
 ]
 
-// 面积区间（min/max，单位 ㎡）
+// 面积区间（min/max，单位 ㎡）— 对齐在售 4 款（30-90㎡）
 const AREA_OPTIONS = [
   { key: 'all', label: '全部面积', min: 0, max: 9999 },
-  { key: 'a1', label: '50-80㎡', min: 50, max: 80 },
-  { key: 'a2', label: '80-120㎡', min: 80, max: 120 },
-  { key: 'a3', label: '120-160㎡', min: 120, max: 160 },
-  { key: 'a4', label: '160㎡以上', min: 160, max: 9999 }
+  { key: 'a1', label: '40㎡以下', min: 0, max: 40 },
+  { key: 'a2', label: '40-60㎡', min: 40, max: 60 },
+  { key: 'a3', label: '60-80㎡', min: 60, max: 80 },
+  { key: 'a4', label: '80㎡以上', min: 80, max: 9999 }
 ]
 
 const PAGE_SIZE = 4

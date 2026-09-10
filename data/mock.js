@@ -11,21 +11,18 @@ const banners = [
 ]
 
 /**
- * 采暖炉商品
- * series: direct 直烧款 / gas 气化款
+ * 采暖炉商品（4 款真实在售产品，照片见 /images/stoves/）
+ * series: direct 普通直烧款 / gas 气化款
  * areaMin/areaMax: 适用面积区间（㎡）
  * rating: 好评评分（5 分制）
  * services: 服务标签
+ * image: 商品照片路径
  */
 const stoves = [
-  { id: 's01', model: 'NL-80',  name: '家用燃煤采暖炉 80型', series: 'direct', power: 8,  areaMin: 60,  areaMax: 90,  area: '60-90㎡',   price: 1280, sales: 326, rating: 4.8, hot: true,  tags: ['封火12小时'], services: ['包邮','包安装'], desc: '适合 2-3 间正房，带暖气片接口，封火过夜不熄灭。' },
-  { id: 's02', model: 'NL-100', name: '家用燃煤采暖炉 100型', series: 'direct', power: 10, areaMin: 90,  areaMax: 130, area: '90-130㎡',  price: 1580, sales: 289, rating: 4.7, hot: true,  tags: ['大料口','省煤'], services: ['包邮','包安装'], desc: '加大料仓，一次添煤烧 8 小时，适合北方四合院。' },
-  { id: 's03', model: 'NL-120', name: '气化燃煤采暖炉 120型', series: 'gas', power: 12, areaMin: 120, areaMax: 160, area: '120-160㎡', price: 1880, sales: 218, rating: 4.9, hot: true,  tags: ['双水套','升温快'], services: ['包邮','包安装'], desc: '气化燃烧省煤 30%，双水套热效率高，带循环泵接口。' },
-  { id: 's04', model: 'NL-150', name: '气化燃煤采暖炉 150型', series: 'gas', power: 15, areaMin: 160, areaMax: 220, area: '160-220㎡', price: 2380, sales: 156, rating: 4.8, hot: false, tags: ['大面积','商用家用'], services: ['包邮','包安装'], desc: '适合二层小楼或小型超市、村委会大面积供暖。' },
-  { id: 's05', model: 'NL-200', name: '气化燃煤采暖炉 200型', series: 'gas', power: 20, areaMin: 220, areaMax: 300, area: '220-300㎡', price: 2980, sales: 98,  rating: 4.6, hot: false, tags: ['养殖场推荐'], services: ['包邮','包安装'], desc: '大炉膛厚钢板，养殖场、仓库大面积供暖首选。' },
-  { id: 's06', model: 'NL-60',  name: '家用燃煤采暖炉 60型', series: 'direct', power: 6,  areaMin: 40,  areaMax: 60,  area: '40-60㎡',   price: 980,  sales: 412, rating: 4.7, hot: true,  tags: ['小户型','经济款'], services: ['包邮'], desc: '单间/老年房经济实用，安装简单当天用。' },
-  { id: 's07', model: 'NL-130', name: '气化燃煤采暖炉 130型', series: 'gas', power: 13, areaMin: 130, areaMax: 170, area: '130-170㎡', price: 2680, sales: 134, rating: 4.9, hot: false, tags: ['新款','静音'], services: ['包邮','包安装'], desc: '新款气化炉，燃烧无烟不呛人，适合靠近卧室的房间。' },
-  { id: 's08', model: 'NL-70',  name: '家用燃煤采暖炉 70型', series: 'direct', power: 7,  areaMin: 50,  areaMax: 70,  area: '50-70㎡',   price: 880,  sales: 358, rating: 4.5, hot: false, tags: ['入门款'], services: ['包邮'], desc: '入门经济款，一炉带 3-4 组暖气片，租房/临时房划算。' }
+  { id: 's01', model: 'QH-80', name: '气化燃煤采暖炉 80型', series: 'gas',    power: 8, areaMin: 70, areaMax: 90,  area: '70-90㎡',  price: 800, sales: 326, rating: 4.8, hot: true,  tags: ['气化燃烧','80㎡'],   services: ['包邮'],         desc: '气化燃烧省煤高效，适用 70-90 ㎡房间，可接暖气片，封火过夜不熄灭。', image: '/images/stoves/气化炉_80.jpg' },
+  { id: 's02', model: 'QH-60', name: '气化燃煤采暖炉 60型', series: 'gas',    power: 6, areaMin: 50, areaMax: 70,  area: '50-70㎡',  price: 600, sales: 412, rating: 4.7, hot: true,  tags: ['气化燃烧','60㎡'],   services: ['包邮'],         desc: '气化小户型款，适用 50-70 ㎡，燃烧充分不呛人，适合 1-2 间正房。',     image: '/images/stoves/气化炉_60.jpg' },
+  { id: 's03', model: 'PT-40', name: '家用燃煤采暖炉 40型', series: 'direct', power: 4, areaMin: 30, areaMax: 50,  area: '30-50㎡',  price: 300, sales: 358, rating: 4.5, hot: false, tags: ['经济款','小户型'],  services: ['发物流·运费到付'], desc: '经济基础款，适用 30-50 ㎡单间，发货走物流运费到付，租房/临时房划算。', image: '/images/stoves/炉子_40.jpg' },
+  { id: 's04', model: 'PT-60', name: '家用燃煤采暖炉 60型', series: 'direct', power: 6, areaMin: 50, areaMax: 70,  area: '50-70㎡',  price: 500, sales: 289, rating: 4.6, hot: true,  tags: ['实用款','60㎡'],    services: ['发物流·运费到付'], desc: '实用大功率款，适用 50-70 ㎡，带暖气片接口，发货走物流运费到付。',     image: '/images/stoves/炉子_60.jpg' }
 ]
 
 // 配件耗材 — 8 大分类
@@ -96,9 +93,9 @@ const partCategories = [
 
 // 已购炉子订单（仅"已签收"可预约安装）
 const orders = [
-  { id: 'ORD20260901', model: 'NL-100', name: '家用燃煤采暖炉 100型', status: '已签收', addr: '张家屯乡 幸福村 2 排 18 号', time: '2026-09-01' },
-  { id: 'ORD20260825', model: 'NL-80', name: '家用燃煤采暖炉 80型', status: '已签收', addr: '李家洼镇 河东村 312 国道旁', time: '2026-08-25' },
-  { id: 'ORD20260905', model: 'NL-150', name: '气化燃煤采暖炉 150型', status: '运输中', addr: '王家庄乡 永安村', time: '2026-09-05' }
+  { id: 'ORD20260901', model: 'QH-80', name: '气化燃煤采暖炉 80型', status: '已签收', addr: '张家屯乡 幸福村 2 排 18 号', time: '2026-09-01' },
+  { id: 'ORD20260825', model: 'PT-60', name: '家用燃煤采暖炉 60型', status: '已签收', addr: '李家洼镇 河东村 312 国道旁', time: '2026-08-25' },
+  { id: 'ORD20260905', model: 'QH-60', name: '气化燃煤采暖炉 60型', status: '运输中', addr: '王家庄乡 永安村', time: '2026-09-05' }
 ]
 
 // 安装服务保障

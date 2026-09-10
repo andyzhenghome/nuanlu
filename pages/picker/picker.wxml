@@ -36,7 +36,7 @@
     </view>
 
     <view wx:for="{{result}}" wx:key="id" class="card rec-card" data-id="{{item.id}}" bindtap="goDetail">
-      <view class="rec-img img-stove"><text class="rec-model">{{item.model}}</text></view>
+      <view class="rec-img"><image class="rec-photo" src="{{item.image}}" mode="aspectFill" lazy-load></image></view>
       <view class="rec-info">
         <text class="rec-name">{{item.name}}</text>
         <text class="text-3">{{item.power}}kW · 适用 {{item.area}}</text>

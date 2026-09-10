@@ -1,9 +1,10 @@
 <!-- pages/detail/detail.wxml — 商品详情 -->
 <view class="page" wx:if="{{item}}">
 
-  <!-- 商品主图（渐变占位 + 型号） -->
+  <!-- 商品主图 -->
   <view class="hero">
-    <text class="hero-model">{{item.model}}</text>
+    <image class="hero-photo" src="{{item.image}}" mode="aspectFill"></image>
+    <view class="hero-mask"></view>
     <text class="hero-name">{{item.name}}</text>
   </view>
 
@@ -35,7 +36,7 @@
     </view>
     <view class="param-row">
       <text class="param-label">配送</text>
-      <text class="param-val">周边乡镇免费送，远郊加运费</text>
+      <text class="param-val">{{item.servicesText}}</text>
     </view>
   </view>
 

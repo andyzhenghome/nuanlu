@@ -16,7 +16,7 @@
         <image class="nav-icon-img" src="/images/nav-stove.png" mode="aspectFit"></image>
       </view>
       <text class="nav-name">燃煤采暖炉</text>
-      <text class="nav-sub">60-300㎡ 选型</text>
+      <text class="nav-sub">30-90㎡ 选型</text>
     </view>
 
     <view class="nav-item" data-url="/pages/parts/parts" bindtap="goPage">
@@ -56,8 +56,8 @@
   <scroll-view scroll-x class="hot-scroll" enhanced show-scrollbar="{{false}}">
     <view class="hot-list">
       <view class="hot-card" wx:for="{{hotStoves}}" wx:key="id" data-id="{{item.id}}" bindtap="goDetail">
-        <view class="hot-img img-stove">
-          <text class="hot-model">{{item.model}}</text>
+        <view class="hot-img">
+          <image class="hot-photo" src="{{item.image}}" mode="aspectFill" lazy-load></image>
         </view>
         <view class="hot-info">
           <text class="hot-name">{{item.name}}</text>

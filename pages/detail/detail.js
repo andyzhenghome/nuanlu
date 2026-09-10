@@ -10,7 +10,7 @@ Page({
   onLoad(options) {
     const item = mock.stoves.find((s) => s.id === options.id)
     if (item) {
-      this.setData({ item: { ...item, priceText: formatMoney(item.price) } })
+      this.setData({ item: { ...item, priceText: formatMoney(item.price), servicesText: (item.services || []).join('、') } })
       wx.setNavigationBarTitle({ title: item.name })
     }
   },

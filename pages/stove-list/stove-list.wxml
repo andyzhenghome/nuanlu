@@ -37,9 +37,9 @@
   <!-- 双列商品卡片 -->
   <view class="goods-grid" wx:if="{{list.length > 0}}">
     <view class="goods-card" wx:for="{{list}}" wx:key="id" data-id="{{item.id}}" bindtap="goDetail">
-      <view class="goods-img img-stove">
+      <view class="goods-img">
+        <image class="goods-photo" src="{{item.image}}" mode="aspectFill" lazy-load></image>
         <text class="goods-series">{{item.seriesLabel}}</text>
-        <text class="goods-model">{{item.model}}</text>
       </view>
       <view class="goods-body">
         <text class="goods-name">{{item.name}}</text>
